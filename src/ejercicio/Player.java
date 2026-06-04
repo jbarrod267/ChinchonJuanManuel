@@ -33,8 +33,12 @@ public abstract class Player {
      * Muestra las cartas en mano.
      */
     public void showHand() {
-        for (int i = 0; i < hand.size(); i++)
-            System.out.println(i + ": " + hand.get(i));
+
+        System.out.println("\nMano de " + name + ":");
+
+        for (int i = 0; i < hand.size(); i++) {
+            System.out.println("[" + i + "] " + hand.get(i));
+        }
     }
 
     /**

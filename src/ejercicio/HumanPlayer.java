@@ -17,29 +17,49 @@ public class HumanPlayer extends Player {
     @Override
     public Card playTurn(Deck deck, Stack<Card> discard, boolean canClose) {
 
-        System.out.println("\nTurno de " + name);
+        System.out.println("\n====================");
+        System.out.println("TURNO DE " + name);
+        System.out.println("====================");
+
+        System.out.println("Carta visible del descarte: "
+                + discard.peek());
+
         showHand();
 
-        System.out.println("Robar de: 1) Mazo  2) Descarte");
+        System.out.println("\nRobar de:");
+        System.out.println("1) Mazo");
+        System.out.println("2) Descarte");
+
         int option = input.readIntInRange(1, 2);
 
-        if (option == 1) addCard(deck.draw());
-        else addCard(discard.pop());
+        if (option == 1) {
+            addCard(deck.draw());
+        } else {
+            addCard(discard.pop());
+        }
+
+        System.out.println("\nTras robar:");
 
         showHand();
 
-        if (canClose) {
+        if (canClose && CombinationHelper.canClose(hand)) {
+
+            System.out.println("\nPuedes cerrar.");
             System.out.println("¿Quieres cerrar? (s/n)");
+
             if (input.readBooleanUsingChar('s', 'n')) {
                 return null;
             }
         }
 
-        System.out.println("Selecciona carta a descartar:");
+        System.out.println("\nSelecciona carta a descartar:");
+
         int idx = input.readIntInRange(0, hand.size() - 1);
 
         Card c = hand.get(idx);
+
         removeCard(c);
+
         return c;
     }
 }

@@ -24,14 +24,30 @@ public class AIPlayer extends Player {
      */
     @Override
     public Card playTurn(Deck deck, Stack<Card> discard, boolean canClose) {
-        addCard(deck.draw());
+
+        System.out.println("\n--------------------");
+        System.out.println("Turno de " + name);
+        System.out.println("--------------------");
+
+        Card robada = deck.draw();
+
+        addCard(robada);
+
+        System.out.println(name + " roba: " + robada);
 
         if (canClose && CombinationHelper.canClose(hand)) {
+
+            System.out.println(name + " decide cerrar.");
             return null;
         }
 
-        Card c = hand.get(new Random().nextInt(hand.size()));
-        removeCard(c);
-        return c;
+        Card descartada =
+                hand.get(new Random().nextInt(hand.size()));
+
+        removeCard(descartada);
+
+        System.out.println(name + " descarta: " + descartada);
+
+        return descartada;
     }
 }

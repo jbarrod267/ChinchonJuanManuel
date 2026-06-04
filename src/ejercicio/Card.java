@@ -31,6 +31,14 @@ public class Card {
 
     @Override
     public String toString() {
-        return value + " de " + suit;
+
+        String simbolo = switch (suit) {
+            case OROS -> "♦";
+            case COPAS -> "♥";
+            case ESPADAS -> "♠";
+            case BASTOS -> "♣";
+        };
+
+        return value + simbolo;
     }
 }
