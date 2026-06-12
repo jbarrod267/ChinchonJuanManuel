@@ -283,11 +283,11 @@ Interpretación del UML
 
 El diagrama UML refleja una arquitectura modular donde cada clase tiene una responsabilidad clara.
 
-Game controla el flujo global
-Round gestiona cada ronda
-Player define comportamiento base
-Deck gestiona cartas
-CombinationHelper encapsula la lógica del juego
+* Game controla el flujo global
+* Round gestiona cada ronda
+* Player define comportamiento base
+* Deck gestiona cartas
+* CombinationHelper encapsula la lógica del juego
 
 ---
 
