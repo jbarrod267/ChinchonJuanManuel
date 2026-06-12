@@ -279,6 +279,16 @@ Contiene la documentación JavaDoc generada automáticamente.
 
 ![UML](ChinchonUML.drawio.png)
 
+Interpretación del UML
+
+El diagrama UML refleja una arquitectura modular donde cada clase tiene una responsabilidad clara.
+
+Game controla el flujo global
+Round gestiona cada ronda
+Player define comportamiento base
+Deck gestiona cartas
+CombinationHelper encapsula la lógica del juego
+
 ---
 
 # 7. Descripción de Clases
